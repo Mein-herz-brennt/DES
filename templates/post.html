@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ post['title'] }} {% endblock %}</h2>
+    <ul class="badge badge-primary">{{ post['created'] }}</ul>
+        {% set list_words = post['content'].split("\n") %}
+        {% for i in list_words %}
+        <li>{{ i }}</li>
+        {% endfor %}
+{% endblock %}
